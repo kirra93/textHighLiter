@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name":"textHighLiter",
+    "description" : "Highlited choosen words in different colors.",
+    "version":"1.0",
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title":"highLiter"
+    },
+    "background": {
+        "scripts": ["bg.js"]
+      },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": [
+            "content.js",
+            "jquery.js"
+        ]
+    }],
+    "permissions": [
+        "tabs", "activeTab"
+    ]
+}
